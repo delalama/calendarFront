@@ -1,0 +1,12 @@
+{
+  "APP": {
+    "APP": "app",
+    "TITLE": "schedule"
+  },
+  "ROLES": {
+    "ADMIN": "Administrator"
+  },
+  "COMPANY": {
+    "NAME": "company name"
+  }
+}

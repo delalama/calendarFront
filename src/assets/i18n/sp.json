@@ -1,0 +1,15 @@
+{
+  "APP": {
+    "APP": "app",
+    "TITLE": "calendario"
+  },
+  "DEMO": [
+    {"heading":"puta prueba"}
+  ],
+  "ROLES": {
+    "ADMIN": "Administrador"
+  },
+  "COMPANY": {
+    "NAME": "nombre de la compañía"
+  }
+}
