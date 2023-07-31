@@ -1,0 +1,9 @@
+<form [formGroup]="formdata" (ngSubmit)="onSubmit(formdata.value)">
+
+    <input type="text" class="companyName" name="companyName" placeholder="companyName"
+           formControlName="companyName">
+    <br/>
+
+    <button class="button" type="submit">SUBMIT</button>
+
+</form>
