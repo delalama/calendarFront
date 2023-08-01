@@ -10,6 +10,12 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatLegacyChipsModule} from "@angular/material/legacy-chips";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -19,6 +25,7 @@ import {ReactiveFormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     HttpClientModule,
+    MatNativeDateModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -31,7 +38,12 @@ import {ReactiveFormsModule} from "@angular/forms";
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatMenuModule,
+    MatLegacyChipsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,9 +1,126 @@
-<form [formGroup]="formdata" (ngSubmit)="onSubmit(formdata.value)">
+<mat-stepper #stepper>
 
-    <input type="text" class="companyName" name="companyName" placeholder="companyName"
-           formControlName="companyName">
-    <br/>
 
-    <button class="button" type="submit">SUBMIT</button>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <h1>SELECT MONTH AND YEAR</h1>
 
-</form>
+      <mat-form-field>
+        <input #dpInput type="date" matInput [matDatepicker]="dp" placeholder="datepicker" [formControl]="date">
+        <mat-hint>MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp
+                        (monthSelected)="monthSelected($event, dp, dpInput)"
+                        startView="multi-year"></mat-datepicker>
+      </mat-form-field>
+
+      <br>
+      <ng-template matStepLabel>{{"COMPANY.EMPLOYEES_NUMBER" | translate | uppercase}}</ng-template>
+      <mat-form-field>
+        <mat-label>{{"COMPANY.EMPLOYEES_NUMBER" | translate}}</mat-label>
+        <input matInput type="number" formControlName="employeesNumber" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext (click)="createEmployees()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="secondFormGroup" label="{{'COMPANY.EMPLOYEES_FREE_DAYS' | translate | uppercase}}">
+    <form [formGroup]="secondFormGroup">
+
+      <tr *ngFor="let employee of employees">
+        <mat-form-field>
+          <mat-label>{{"COMPANY.EMPLOYEE_NAME" | translate}}</mat-label>
+          <input matInput type="text" formControlName="employeeName{{employee.id}}" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <h6 *ngFor="let date of employee.daysOff">
+            {{ date | date }}
+          </h6>
+          <mat-chip-list #chipList aria-label="Choose a date" (click)="picker.open()">
+            <mat-chip
+              *ngFor="let value of model"
+              [selectable]="false"
+              [removable]="true"
+              (removed)="remove(value)"
+            >
+
+            </mat-chip>
+            <input
+              formControlName="lefardo{{employee.id}}"
+              [value]="resetModel"
+              matInput
+              [matDatepicker]="picker"
+              placeholder="Choose a date"
+              (dateChange)="dateChanged($event, employee.id)"
+              [matChipInputFor]="chipList"
+              hidden
+            />
+          </mat-chip-list>
+          <mat-datepicker-toggle matPrefix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker
+            #picker
+            [startAt]="init"
+            [dateClass]="dateClass"
+          ></mat-datepicker>
+
+        </mat-form-field>
+
+      </tr>
+
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext (click)="saveFreedays()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="fourthFormGroup" label="Fill out your address">
+    <form [formGroup]="fourthFormGroup">
+      <mat-form-field>
+        <ng-template matStepLabel>{{"COMPANY.NAME" | translate | uppercase}}</ng-template>
+        <mat-form-field>
+          <mat-label>{{"COMPANY.NAME" | translate}}</mat-label>
+          <input matInput formControlName="companyName" required>
+        </mat-form-field>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>{{"APP.DONE" | translate | uppercase}}</ng-template>
+
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+
+
+<!--<form [formGroup]="formdata" (ngSubmit)="onSubmit(formdata.value)">-->
+
+<!--  <input type="text" class="companyName" name="companyName" placeholder="companyName"-->
+<!--         formControlName="companyName">-->
+<!--  <br/>-->
+
+<!--  <h1>HORA APERTURA 1</h1>-->
+<!--  <input type="openTime1" class="openTime1" name="openTime1" placeholder="08:00"-->
+<!--         formControlName="openTime1">-->
+<!--  <br/>-->
+<!--  <h1>HORA CIERRE 1</h1>-->
+<!--  <input type="closeTime1" class="closeTime1" name="closeTime1" placeholder="13:00"-->
+<!--         formControlName="closeTime1">-->
+<!--  <br/>-->
+
+<!--  <button class="button" type="submit">SUBMIT</button>-->
+
+<!--</form>-->

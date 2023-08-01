@@ -7,3 +7,22 @@
 .example-full-width {
   width: 100%;
 }
+
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+
+.mat-calendar-body-cell.selected {
+  background-color: red !important;
+  border-radius: 50%
+}
+
+.drop-calendar {
+  width: 30rem
+}

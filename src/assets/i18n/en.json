@@ -1,12 +1,19 @@
 {
   "APP": {
     "APP": "app",
-    "TITLE": "schedule"
+    "TITLE": "schedule",
+    "MONTH": "month",
+    "YEAR": "year",
+    "FREE_DAYS": "free days",
+    "DONE": "done"
   },
   "ROLES": {
     "ADMIN": "Administrator"
   },
   "COMPANY": {
-    "NAME": "company name"
+    "NAME": "company name",
+    "EMPLOYEES_NUMBER": "employees number",
+    "EMPLOYEE_NAME": "employe name",
+    "EMPLOYEES_FREE_DAYS": "fill your employees free days"
   }
 }

@@ -1,7 +1,11 @@
 {
   "APP": {
     "APP": "app",
-    "TITLE": "calendario"
+    "TITLE": "calendario",
+    "MONTH": "mes",
+    "YEAR": "año",
+    "FREE_DAYS": "días libres",
+    "DONE": "hecho"
   },
   "DEMO": [
     {"heading":"puta prueba"}
@@ -10,6 +14,9 @@
     "ADMIN": "Administrador"
   },
   "COMPANY": {
-    "NAME": "nombre de la compañía"
+    "NAME": "nombre de la compañía",
+    "EMPLOYEES_NUMBER": "número de empleados",
+    "EMPLOYEE_NAME": "nombre del empleado",
+    "EMPLOYEES_FREE_DAYS": "días libres de los empleados"
   }
 }
