@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {HttpService} from "./service/http-service.service";
 import {Person} from "./interface/Person";
@@ -29,5 +29,9 @@ export class AppComponent implements OnInit{
     this.httpService.get('RandomPersons').subscribe(
         (response) => { this.posts = <Person>response; },
         (error) => { console.log(error); });
+  }
+
+  isLogged($event: boolean) {
+    console.log($event);
   }
 }

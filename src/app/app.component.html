@@ -307,6 +307,7 @@
 </div>
 
 <div class="content" role="main">
+  <app-app-login (isLogged)="isLogged($event)"></app-app-login>
   <app-input-text
     inputTag="{{ 'COMPANY.NAME' | translate | uppercase }}"></app-input-text>
 

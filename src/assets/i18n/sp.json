@@ -17,6 +17,7 @@
     "NAME": "nombre de la compañía",
     "EMPLOYEES_NUMBER": "número de empleados",
     "EMPLOYEE_NAME": "nombre del empleado",
+    "EMPLOYEES_NAMES": "nombres de empleados",
     "EMPLOYEES_FREE_DAYS": "días libres de los empleados"
   }
 }

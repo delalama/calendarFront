@@ -13,7 +13,8 @@
   "COMPANY": {
     "NAME": "company name",
     "EMPLOYEES_NUMBER": "employees number",
-    "EMPLOYEE_NAME": "employe name",
+    "EMPLOYEE_NAME": "employee name",
+    "EMPLOYEES_NAMES": "employees names",
     "EMPLOYEES_FREE_DAYS": "fill your employees free days"
   }
 }

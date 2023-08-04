@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InputTextComponent } from './input-text.component';
+import { AppLoginComponent } from './app-login.component';
 
-describe('InputTextComponent', () => {
-  let component: InputTextComponent;
-  let fixture: ComponentFixture<InputTextComponent>;
+describe('AppLoginComponent', () => {
+  let component: AppLoginComponent;
+  let fixture: ComponentFixture<AppLoginComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [InputTextComponent]
+      declarations: [AppLoginComponent]
     });
-    fixture = TestBed.createComponent(InputTextComponent);
+    fixture = TestBed.createComponent(AppLoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -5,24 +5,29 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import { InputTextComponent } from './components/input-text/input-text.component';
+import { CompanyNameInput } from './components/input-text/company-name-input.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatLegacyChipsModule} from "@angular/material/legacy-chips";
 import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import { AppLoginComponent } from './components/app-login/app-login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputTextComponent
+    CompanyNameInput,
+    AppLoginComponent
   ],
   imports: [
+    MatFormFieldModule,
+    MatInputModule,
     BrowserModule,
     HttpClientModule,
     MatNativeDateModule,
@@ -36,14 +41,14 @@ import {MatIconModule} from "@angular/material/icon";
     }),
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
     ReactiveFormsModule,
     MatStepperModule,
     MatDatepickerModule,
     MatMenuModule,
     MatLegacyChipsModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

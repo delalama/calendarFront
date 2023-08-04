@@ -1,0 +1,7 @@
+<form #companyName="ngForm">
+  <input #name type="text" name="name" placeholder="name" ngModel>
+  <input #pass type="text" name="pass" placeholder="pass" ngModel>
+  <button mat-raised-button color="primary" (click)="login()">login</button>
+  <button mat-raised-button color="primary" (click)="create()">create</button>
+  <h1 class="okMessage">{{message}}</h1>
+</form>

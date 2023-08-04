@@ -1,0 +1,13 @@
+<div>
+  <button mat-raised-button color="primary" (click)="openDialog()">{{inputTag}}</button>
+
+  <h1 *ngIf="isOpen">
+    <form #companyName="ngForm" (ngSubmit)="onClickSubmit(companyName.value)">
+      <input type="text" name="companyName" placeholder="companyName" ngModel>
+      <input type="submit" value="submit">
+      <h1 #error>{{errorMessage}}</h1>
+      <h1 class="okMessage">{{okMessage}}</h1>
+    </form>
+  </h1>
+
+</div>
